@@ -1,5 +1,3 @@
-123123
-
 # Java Junior Developer Training Course.
 88 hours training + 32 hours work project = 120 hr.
 
