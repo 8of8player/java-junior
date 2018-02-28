@@ -24,7 +24,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
 
 
     /*
-    TODO: implement Logger solution to match specification as tests
+    TODO: implement Logger solution to match specification as tests*/
 
     @Test
     public void shouldLogSequentIntegersAsSum() throws IOException {
@@ -109,8 +109,14 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
             "str 2\n" +
             "str 3 (x3)\n"
         );
+
+//        assertSysoutContains("str1");
+//        assertSysoutContains("str1");
+//        assertSysoutContains("str1");
+//        assertSysoutContains("str1");
+//        assertSysoutContains("str1");
         //endregion
     }
 
-    */
+
 }
