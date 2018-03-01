@@ -26,8 +26,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public void shouldLogInteger() throws IOException {
         //region when
         Logger.log(1);
+        Logger.fflush();
         Logger.log(0);
+        Logger.fflush();
         Logger.log(-1);
+        Logger.fflush();
         //endregion
 
         //region then
@@ -40,8 +43,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public void shouldLogByte() throws IOException {
         //region when
         Logger.log((byte)1);
+        Logger.fflush();
         Logger.log((byte)0);
+        Logger.fflush();
         Logger.log((byte)-1);
+        Logger.fflush();
         //endregion
 
         //region then
@@ -59,7 +65,9 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public void shouldLogChar() throws IOException {
         //region when
         Logger.log('a');
+        Logger.fflush();
         Logger.log('b');
+        Logger.fflush();
         //endregion
 
         //region then
@@ -73,7 +81,9 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public void shouldLogString() throws IOException {
         //region when
         Logger.log("test string 1");
+        Logger.fflush();
         Logger.log("other str");
+        Logger.fflush();
         //endregion
 
         //region then
@@ -87,7 +97,9 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public void shouldLogBoolean() throws IOException {
         //region when
         Logger.log(true);
+        Logger.fflush();
         Logger.log(false);
+        Logger.fflush();
         //endregion
 
         //region then
@@ -101,6 +113,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public void shouldLogReference() throws IOException {
         //region when
         Logger.log(new Object());
+        Logger.fflush();
         //endregion
 
         //region then
