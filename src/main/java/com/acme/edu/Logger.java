@@ -1,11 +1,12 @@
 package com.acme.edu;
 
 public class Logger {
+
     private static final String PRIMITIVE = "primitive: ";
     private static final String CHAR = "char: ";
     private static final String STRING = "string: ";
     private static final String OBJECT = "reference: ";
-
+    private static Controller controller = new Controller();
     private static final String TYPE_NAME_INT = "INT";
     private static final String TYPE_NAME_BYTE = "BYTE";
     private static final String TYPE_NAME_BOOLEAN = "BOOLEAN";
@@ -20,15 +21,15 @@ public class Logger {
 
 
     public static void log(int message) {
-        if (!typeName.equals(TYPE_NAME_INT)) {
-            fflush();
-            typeName = TYPE_NAME_INT;
-        }
-        if ((sum + (long) message) > Integer.MAX_VALUE) {
-            fflush();
-        }
-        sum += message;
-
+//        if (!typeName.equals(TYPE_NAME_INT)) {
+//            fflush();
+//            typeName = TYPE_NAME_INT;
+//        }
+//        if ((sum + (long) message) > Integer.MAX_VALUE) {
+//            fflush();
+//        }
+//        sum += message;
+            controller.start(new Message(message));
     }
 
     public static void log(byte message) {
@@ -45,19 +46,19 @@ public class Logger {
     }
 
     public static void fflush() {
-        if (typeName.equals(TYPE_NAME_INT) || typeName.equals(TYPE_NAME_BYTE)) {
-            print(PRIMITIVE + sum);
-            sum = 0;
-        }
-        if (typeName.equals(TYPE_NAME_STRING)) {
-            if (sum == 1) {
-                print(STRING + lastString);
-            } else {
-                print(STRING + lastString + " (x" + sum + ")");
-            }
-            sum = 0;
-            lastString = "";
-        }
+//        if (typeName.equals(TYPE_NAME_INT) || typeName.equals(TYPE_NAME_BYTE)) {
+//            print(PRIMITIVE + sum);
+//            sum = 0;
+//        }
+//        if (typeName.equals(TYPE_NAME_STRING)) {
+//            if (sum == 1) {
+//                print(STRING + lastString);
+//            } else {
+//                print(STRING + lastString + " (x" + sum + ")");
+//            }
+//            sum = 0;
+//            lastString = "";
+//        }
 
     }
 
