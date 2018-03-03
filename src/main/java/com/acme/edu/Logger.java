@@ -46,7 +46,6 @@ public class Logger {
         if (typeName.equals(TYPE_NAME_INT) || typeName.equals(TYPE_NAME_BYTE)) {
             print(PRIMITIVE + sum);
             sum = 0;
-            return;
         }
         if (typeName.equals(TYPE_NAME_STRING)) {
             if (sum == 1) {
