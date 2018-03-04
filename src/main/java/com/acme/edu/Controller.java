@@ -1,10 +1,30 @@
 package com.acme.edu;
 
-public class Controller {
-    Printer printer = new Printer();
-    Editor editor = new Editor();
+import com.acme.edu.message.Message;
 
-    public void start(Message msg){
-        printer.print(editor.edit(msg));
+public class Controller {
+    Message currentMsg = null;
+    Printer printer = new Printer();
+
+
+    public void takeNewMsg(Message msg) {
+        if(currentMsg==null){
+            currentMsg=msg;
+            return;
+        }
+        if(!currentMsg.updateOrFflush(msg)){
+            fflush();
+            currentMsg=msg;
+            return;
+        }
+    }
+
+
+    public void fflush(){
+        if(currentMsg==null){
+            return;
+        }
+        printer.print(currentMsg.getEditedMsg());
+        currentMsg=null;
     }
 }

@@ -30,7 +30,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //region when
         Logger.log(new int[] {-1, 0, 1});
         //endregion
-
+        Logger.fflush();
         //region then
         assertSysoutEquals(
             "primitives array: {-1, 0, 1}\r\n"
@@ -43,6 +43,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //region when
         Logger.log(new int[][] {{-1, 0, 1}, {1, 2, 3}, {-1, -2, -3}});
         //endregion
+        Logger.fflush();
 
         //region then
         assertSysoutEquals(
