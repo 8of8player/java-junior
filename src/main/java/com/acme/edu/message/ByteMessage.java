@@ -1,13 +1,11 @@
 package com.acme.edu.message;
 
-import com.acme.edu.Editor;
-
 public class ByteMessage extends Message {
     public byte value;
 
     @Override
     public String getEditedMsg() {
-        return editor.edit(value);
+        return String.format("primitive: %d", value);
     }
 
     public ByteMessage(byte message) {
@@ -15,7 +13,7 @@ public class ByteMessage extends Message {
     }
 
     @Override
-    public boolean updateOrFflush(Message newMsg) {
+    public boolean updateOrFlush(Message newMsg) {
         if(!newMsg.getClass().getSimpleName().equals("ByteMessage")) {
             return false;
         }

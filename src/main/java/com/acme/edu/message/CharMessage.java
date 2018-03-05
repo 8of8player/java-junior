@@ -9,7 +9,7 @@ public class CharMessage extends Message{
 
     @Override
     public String getEditedMsg() {
-        return editor.edit(value);
+        return String.format("char: %c", value);
     }
 
 

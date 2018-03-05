@@ -1,5 +1,7 @@
 package com.acme.edu.message;
 
+import java.util.Arrays;
+
 public class ArrayMessage extends Message {
     public int[] value;
 
@@ -9,6 +11,9 @@ public class ArrayMessage extends Message {
 
     @Override
     public String getEditedMsg() {
-        return editor.edit(value);
+        String msg = Arrays.toString(value);
+        msg = msg.replace('[', '{');
+        msg = msg.replace(']', '}');
+        return String.format("primitives array: %s", msg);
     }
 }

@@ -9,7 +9,7 @@ public class ObjectMessage extends Message {
 
     @Override
     public String getEditedMsg() {
-        return editor.edit(value);
+        return String.format("reference: %s", value.toString());
     }
 
 

@@ -1,14 +1,15 @@
 package com.acme.edu.message;
 
-import com.acme.edu.Editor;
-
 public class StringMessage extends Message {
-
     public String value;
     int number;
     @Override
     public String getEditedMsg() {
-        return editor.edit(value,number);
+        if (number == 1) {
+            return String.format("string: %s", value);
+        } else {
+            return String.format("string: %s (x%d)", value, number);
+        }
     }
 
     public StringMessage(String message) {
@@ -17,7 +18,7 @@ public class StringMessage extends Message {
     }
 
     @Override
-    public boolean updateOrFflush(Message newMsg) {
+    public boolean updateOrFlush(Message newMsg) {
         if (!newMsg.getClass().getSimpleName().equals("StringMessage")) {
             return false;
         }
