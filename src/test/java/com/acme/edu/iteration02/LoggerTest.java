@@ -79,7 +79,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //endregion
 
         //region then
-        assertSysoutContains("str 1");
+         assertSysoutContains("str 1");
         assertSysoutContains("10");
         assertSysoutContains(String.valueOf(Byte.MAX_VALUE));
         assertSysoutContains("str 2");
