@@ -1,5 +1,7 @@
 package com.acme.edu.message;
 
+import com.acme.edu.formatter.Formatter;
+
 import java.util.Arrays;
 
 public class MatrixMessage extends Message {
@@ -10,15 +12,7 @@ public class MatrixMessage extends Message {
     }
 
     @Override
-    public String getEditedMsg() {
-        StringBuffer msgBuffer = new StringBuffer("{\r\n");
-        for (int[] elem : value) {
-            msgBuffer = msgBuffer.append(Arrays.toString(elem)).append("\r\n");
-        }
-        msgBuffer.append("}");
-        String msg = msgBuffer.toString();
-        msg = msg.replace('[', '{');
-        msg = msg.replace(']', '}');
-        return String.format("primitives matrix: %s", msg);
+    public String consume(Formatter formatter) {
+        return formatter.getEditedMsg(this);
     }
 }

@@ -1,9 +1,13 @@
 package com.acme.edu;
 
+import com.acme.edu.formatter.PostfixFormatter;
+import com.acme.edu.formatter.PrefixFormatter;
 import com.acme.edu.message.*;
+import com.acme.edu.printer.ConsolePrinter;
+import com.acme.edu.printer.Printer;
 
 public class Logger {
-    public static Controller controller = new Controller();
+    public static Controller controller = new Controller(System.out::println,new PostfixFormatter());
 
     public static void flush() {
         controller.flush();

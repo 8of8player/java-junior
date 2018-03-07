@@ -1,5 +1,7 @@
 package com.acme.edu.message;
 
+import com.acme.edu.formatter.Formatter;
+
 public class CharMessage extends Message{
     public char value;
 
@@ -7,11 +9,11 @@ public class CharMessage extends Message{
         value = message;
     }
 
-    @Override
-    public String getEditedMsg() {
-        return String.format("char: %c", value);
-    }
 
+    @Override
+    public String consume(Formatter formatter) {
+        return formatter.getEditedMsg(this);
+    }
 
 
 }

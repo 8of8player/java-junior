@@ -1,5 +1,7 @@
 package com.acme.edu.message;
 
+import com.acme.edu.formatter.Formatter;
+
 public class ObjectMessage extends Message {
     public Object value;
 
@@ -8,9 +10,8 @@ public class ObjectMessage extends Message {
     }
 
     @Override
-    public String getEditedMsg() {
-        return String.format("reference: %s", value.toString());
+    public String consume(Formatter formatter) {
+        return formatter.getEditedMsg(this);
     }
-
 
 }

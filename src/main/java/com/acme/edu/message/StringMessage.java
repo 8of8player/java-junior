@@ -1,20 +1,19 @@
 package com.acme.edu.message;
 
+import com.acme.edu.formatter.Formatter;
+
 public class StringMessage extends Message {
     public String value;
-    int number;
-    @Override
-    public String getEditedMsg() {
-        if (number == 1) {
-            return String.format("string: %s", value);
-        } else {
-            return String.format("string: %s (x%d)", value, number);
-        }
-    }
+    public int number;
 
     public StringMessage(String message) {
         value = message;
         number = 1;
+    }
+
+    @Override
+    public String consume(Formatter formatter) {
+        return formatter.getEditedMsg(this);
     }
 
     @Override

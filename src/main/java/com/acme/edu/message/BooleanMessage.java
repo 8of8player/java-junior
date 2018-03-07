@@ -1,5 +1,7 @@
 package com.acme.edu.message;
 
+import com.acme.edu.formatter.Formatter;
+
 public class BooleanMessage extends Message {
     public boolean value;
 
@@ -7,8 +9,9 @@ public class BooleanMessage extends Message {
         value = message;
     }
 
+
     @Override
-    public String getEditedMsg() {
-        return String.format("primitive: %s", value);
+    public String consume(Formatter formatter) {
+        return formatter.getEditedMsg(this);
     }
 }

@@ -1,12 +1,13 @@
 package com.acme.edu.message;
 
-public class IntMessage extends Message {
-    public int value;
+import com.acme.edu.formatter.Formatter;
 
-    @Override
-    public String getEditedMsg() {
-        return String.format("primitive: %d", value);
-    }
+public class IntMessage extends Message {
+      public int value;
+
+//    public String getEditedMsg() {
+//        return String.format("primitive: %d", value);
+//    }
 
     public IntMessage(int message) {
         value = message;
@@ -26,4 +27,12 @@ public class IntMessage extends Message {
         value = value + newIntMsg.value;
         return true;
     }
+
+    @Override
+    public String consume(Formatter formatter) {
+        return formatter.getEditedMsg(this);
+    }
+
+
 }
+

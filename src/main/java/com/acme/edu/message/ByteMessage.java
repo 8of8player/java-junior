@@ -1,12 +1,9 @@
 package com.acme.edu.message;
 
+import com.acme.edu.formatter.Formatter;
+
 public class ByteMessage extends Message {
     public byte value;
-
-    @Override
-    public String getEditedMsg() {
-        return String.format("primitive: %d", value);
-    }
 
     public ByteMessage(byte message) {
         value = message;
@@ -24,5 +21,10 @@ public class ByteMessage extends Message {
         }
         value = (byte) (value + newByteMsg.value);
         return true;
+    }
+
+    @Override
+    public String consume(Formatter formatter) {
+        return formatter.getEditedMsg(this);
     }
 }

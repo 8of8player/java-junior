@@ -6,6 +6,8 @@ public class TestClass {
         Logger.flush();
         Logger.log((byte) -1);
         Logger.flush();
+        Logger.log(1);
+        Logger.flush();
 
 
 

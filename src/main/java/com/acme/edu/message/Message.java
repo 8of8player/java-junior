@@ -1,7 +1,9 @@
 package com.acme.edu.message;
 
+import com.acme.edu.formatter.Formatter;
+
 public abstract class Message {
-    public abstract String getEditedMsg();
+//    public abstract String getEditedMsg();
     /**
      * @param newMsg
      * return false if you need flush
@@ -11,4 +13,6 @@ public abstract class Message {
     public boolean updateOrFlush(Message newMsg){
         return false;
     }
+
+    public abstract String consume(Formatter formatter);
 }
